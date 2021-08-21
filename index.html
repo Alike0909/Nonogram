@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
+    <title>Nonogramm</title>
+</head>
+<body>
+    <div class="global" id="global">
+        <div class="hearts">
+            <svg id="heart-3" xmlns="http://www.w3.org/2000/svg" fill="#e31b23" class="bi bi-heart-fill" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
+            </svg>
+            <svg id="heart-2" xmlns="http://www.w3.org/2000/svg" fill="#e31b23" class="bi bi-heart-fill" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
+            </svg>
+            <svg id="heart-1" xmlns="http://www.w3.org/2000/svg" fill="#e31b23" class="bi bi-heart-fill" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
+            </svg>
+        </div>
+        <div class="coordinates">
+            <div class="rows" id="rows">
+                <div class="row"></div>
+                <div class="row"></div>
+                <div class="row"></div>
+                <div class="row"></div>
+                <div class="row"></div>
+                <div class="row"></div>
+                <div class="row"></div>
+                <div class="row"></div>
+                <div class="row"></div>
+                <div class="row"></div>
+            </div>
+            <div class="columns" id="columns">
+                <div class="column"></div>
+                <div class="column"></div>
+                <div class="column"></div>
+                <div class="column"></div>
+                <div class="column"></div>
+                <div class="column"></div>
+                <div class="column"></div>
+                <div class="column"></div>
+                <div class="column"></div>
+                <div class="column"></div>
+            </div>
+        </div>
+        <div class="board x" id="board">
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+        </div>
+        <div class="toggle" id="toggle_">
+            <input type="checkbox" class="checkbox" id="chk" />
+            <label class="label" for="chk">
+                <div class="ball">
+                    <div class="ball-x" id="ball-x"></div>
+                    <div class="ball-square" id="ball-square" style="display:none;"></div>
+                </div>
+            </label>
+        </div>
+    </div>
+    <div id="winning-message" class="winnig-message" style="display:none;">
+        <h1>Picture Complete!</h1>
+        <button onClick="window.location.reload();">Continue</button>
+    </div>
+    <div id="game-over" class="game-over" style="display:none;">
+        <div class="game-over-window">
+            <h1>Out of Lives!</h1>
+            <button onClick="window.location.reload();">Restart</button>
+        </div>
+    </div>
+    <div id="change-role" class="change-role" style="display:none;">
+        <button onclick="showCreation()">Create</button>
+    </div>
+    <div id="creation-board" class="creation-board" style="display:none;">
+        <div class="host" data-host></div>
+        <div class="host" data-host></div>
+        <div class="host" data-host></div>
+        <div class="host" data-host></div>
+        <div class="host" data-host></div>
+        <div class="host" data-host></div>
+        <div class="host" data-host></div>
+        <div class="host" data-host></div>
+        <div class="host" data-host></div>
+        <div class="host" data-host></div>
+        <div class="host" data-host></div>
+        <div class="host" data-host></div>
+        <div class="host" data-host></div>
+        <div class="host" data-host></div>
+        <div class="host" data-host></div>
+        <div class="host" data-host></div>
+        <div class="host" data-host></div>
+        <div class="host" data-host></div>
+        <div class="host" data-host></div>
+        <div class="host" data-host></div>
+        <div class="host" data-host></div>
+        <div class="host" data-host></div>
+        <div class="host" data-host></div>
+        <div class="host" data-host></div>
+        <div class="host" data-host></div>
+        <div class="host" data-host></div>
+        <div class="host" data-host></div>
+        <div class="host" data-host></div>
+        <div class="host" data-host></div>
+        <div class="host" data-host></div>
+        <div class="host" data-host></div>
+        <div class="host" data-host></div>
+        <div class="host" data-host></div>
+        <div class="host" data-host></div>
+        <div class="host" data-host></div>
+        <div class="host" data-host></div>
+        <div class="host" data-host></div>
+        <div class="host" data-host></div>
+        <div class="host" data-host></div>
+        <div class="host" data-host></div>
+        <div class="host" data-host></div>
+        <div class="host" data-host></div>
+        <div class="host" data-host></div>
+        <div class="host" data-host></div>
+        <div class="host" data-host></div>
+        <div class="host" data-host></div>
+        <div class="host" data-host></div>
+        <div class="host" data-host></div>
+        <div class="host" data-host></div>
+        <div class="host" data-host></div>
+        <div class="host" data-host></div>
+        <div class="host" data-host></div>
+        <div class="host" data-host></div>
+        <div class="host" data-host></div>
+        <div class="host" data-host></div>
+        <div class="host" data-host></div>
+        <div class="host" data-host></div>
+        <div class="host" data-host></div>
+        <div class="host" data-host></div>
+        <div class="host" data-host></div>
+        <div class="host" data-host></div>
+        <div class="host" data-host></div>
+        <div class="host" data-host></div>
+        <div class="host" data-host></div>
+        <div class="host" data-host></div>
+        <div class="host" data-host></div>
+        <div class="host" data-host></div>
+        <div class="host" data-host></div>
+        <div class="host" data-host></div>
+        <div class="host" data-host></div>
+        <div class="host" data-host></div>
+        <div class="host" data-host></div>
+        <div class="host" data-host></div>
+        <div class="host" data-host></div>
+        <div class="host" data-host></div>
+        <div class="host" data-host></div>
+        <div class="host" data-host></div>
+        <div class="host" data-host></div>
+        <div class="host" data-host></div>
+        <div class="host" data-host></div>
+        <div class="host" data-host></div>
+        <div class="host" data-host></div>
+        <div class="host" data-host></div>
+        <div class="host" data-host></div>
+        <div class="host" data-host></div>
+        <div class="host" data-host></div>
+        <div class="host" data-host></div>
+        <div class="host" data-host></div>
+        <div class="host" data-host></div>
+        <div class="host" data-host></div>
+        <div class="host" data-host></div>
+        <div class="host" data-host></div>
+        <div class="host" data-host></div>
+        <div class="host" data-host></div>
+        <div class="host" data-host></div>
+        <div class="host" data-host></div>
+        <div class="host" data-host></div>
+        <div class="host" data-host></div>
+        <div class="host" data-host></div>
+        <div class="host" data-host></div>
+        <button id="creation-post" onclick="post()">Post</button>
+    </div>
+    <script src="confetti.js"></script>
+</body>
+</html>

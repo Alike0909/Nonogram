@@ -1,0 +1,456 @@
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+
+body {
+    position: relative;
+    margin: 0;
+}
+
+.fail {
+    animation: failAnimation 0.5s linear;
+}
+
+@keyframes failAnimation {
+    from {
+        background: transparent;
+    }
+    to {
+        background: rgba(255,51,51,0.7);
+    }
+}
+
+.heart-fall {
+    animation: heartFall 1s linear;
+}
+
+@keyframes heartFall {
+    from {
+        opacity: 1;
+        transform: rotateY(0deg);
+    }
+    to {
+        opacity: 0;
+        transform: rotateY(160deg);
+    }
+}
+
+.global {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hearts {
+    top: 24px;
+    position: absolute;
+}
+
+.hearts svg {
+    margin: 0 12px;
+    width: 48px;
+    height: 48px;
+}
+
+.rows {
+    top: 0;
+    left: 0;
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+}
+
+.row {
+    width: 50px;
+    height: 114px;
+    /* height: fit-content; */
+    background: #ebeff8;
+    border: 1px solid white;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.row span, .column span {
+    /* margin-left: 6px; */
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+}
+
+.columns {
+    top: 0;
+    left: 0;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+}
+
+.column {
+    width: 100px;
+    height: 50px;
+    background: #ebeff8;
+    border: 1px solid white;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.row span {
+    margin: -1px;
+}
+
+.column span {
+    margin-right: 12px;
+}
+
+.board {
+    /* width: 100vw;
+    height: 100vh; */
+    margin-top: 48px;
+    position: absolute;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: repeat(10, auto);
+}
+
+.cell.x::before,
+.cell.x::after {
+    background: #344861;
+}
+
+.cell {
+    width: 50px;
+    height: 50px;
+    background: white;
+    border: 1px solid lightgray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.cell.x,
+.cell.fill {
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.cell:nth-child(10n + 1) {
+    border-left: 1px solid black;
+}
+
+.cell:nth-child(10n + 10) {
+    border-right: 1px solid black;
+}
+
+.cell.x::before,
+.cell.x::after {
+    background: #344861;
+}
+
+.cell.x::before,
+.cell.x::after,
+.board.x .cell:not(.x):not(.fill):hover::before,
+.board.x .cell:not(.x):not(.fill):hover::after {
+    content: '';
+    position: absolute;
+    width: 5px;
+    height: 35px;
+    border-radius: 8px;
+}
+
+.board.x .cell:not(.x):not(.fill):hover::before,
+.board.x .cell:not(.x):not(.fill):hover::after{
+    background: #ebeff8;
+}
+
+.cell.x::before,
+.board.x .cell:hover::before {
+    transform: rotate(45deg);
+}
+
+.cell.x::after,
+.board.x .cell:hover::after {
+    transform: rotate(-45deg);
+}
+
+.cell.fill {
+    background: #344861;
+}
+
+.board.fill .cell:not(.x):not(.fill):hover {
+    background: #ebeff8;
+}
+
+.toggle {
+    position: absolute;
+    margin: 50px 5%;
+}
+
+.toggle .checkbox {
+	opacity: 0;
+	position: absolute;
+}
+
+.toggle .label {
+    background-color: #f2f3f7;
+    /* background-color: black; */
+    border: 0.5px solid lightgray;
+	border-radius: 50px;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 5px;
+	position: relative;
+	height: 70px;
+	width: 135px;
+	transform: scale(1.5);
+}
+
+.toggle .label .ball {
+	background-color: white;
+	border-radius: 50%;
+	position: absolute;
+	top: 4px;
+	left: 4px;
+	height: 60px;
+	width: 60px;
+	transform: translateX(0px);
+	transition: transform 0.2s linear;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 3px 4px rgba(0,0,0,0.25);
+}
+
+.toggle .checkbox:checked + .label .ball {
+	transform: translateX(65px);
+}
+
+.ball-square {
+    width: 28px;
+    height: 28px;
+    background: #344861;
+}
+
+.ball-x {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.ball-x::before,
+.ball-x::after {
+    content: '';
+    position: absolute;
+    width: 7px;
+    height: 32px;
+    background: #344861;
+    border-radius: 8px;
+}
+
+.ball-x::before {
+    transform: rotate(45deg);
+}
+
+.ball-x::after {
+    transform: rotate(-45deg);
+}
+
+.show {
+    display: block !important;
+}
+
+.hide {
+    display: none;
+}
+
+.winnig-message {
+    top: 0;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(35,126,231,0.9);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.winnig-message h1 {
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    font-size: 48px;
+}
+
+.winnig-message button {
+    outline: none;
+    padding: 16px 0;
+    padding: 16px 120px;
+    border-radius: 36px;
+    border: transparent;
+    background: white;
+    color: #227de6;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+}
+
+.game-over {
+    top: 0;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    /* background: white; */
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.game-over-window {
+    /* width: 40vw;
+    height: 40vh; */
+    padding: 64px 40px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 3px 4px rgba(0,0,0,0.25);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.game-over h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 32px;
+}
+
+.game-over button {
+    margin: 24px 0;
+    outline: none;
+    padding: 16px 120px;
+    /* width: 27vw; */
+    border-radius: 36px;
+    border: transparent;
+    background: #227de6;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+}
+
+.change-role {
+    z-index: 9999;
+}
+
+.change-role button {
+    top: 0;
+    right: 10%;
+    position: absolute;
+    margin: 24px 0;
+    outline: none;
+    padding: 16px 120px;
+    /* width: 27vw; */
+    border-radius: 8px;
+    border: 1px solid #227de6;
+    background: transparent;
+    color: #227de6;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+}
+
+.change-role button:hover {
+    margin: 24px 0;
+    outline: none;
+    padding: 16px 120px;
+    /* width: 27vw; */
+    border-radius: 8px;
+    border: 1px solid #227de6;
+    background: #227de6;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+}
+
+.creation-board {
+    padding-top: 24px;
+    top: 0;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    backdrop-filter: blur(12px);
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: repeat(10, auto);
+}
+
+.host {
+    width: 50px;
+    height: 50px;
+    background: white;
+    border: 1px solid lightgray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.host.fill {
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.host.fill {
+    background: #344861;
+}
+
+.creation-board button {
+    top: 300px;
+    position: absolute;
+    outline: none;
+    padding: 16px 120px;
+    /* width: 27vw; */
+    border-radius: 8px;
+    border: 1px solid #227de6;
+    background: #227de6;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+}
+
+.host:nth-child(10n + 1) {
+    border-left: 1px solid black;
+}
+
+.host:nth-child(10n + 10) {
+    border-right: 1px solid black;
+}
+
+.showCreation {
+    animation: createAnimation 1s linear;
+}
+
+@keyframes createAnimation {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
